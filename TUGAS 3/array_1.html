@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mengelola Array</title>
+  </head>
+  <body>
+    <p id="hasilAngka"></p>
+    <p id="hasilHuruf"></p>
+
+    <script>
+      const angka = [20, 10, 3, 30, 58, 42, 6, 9];
+      const huruf = ['z', 'a', 'c', 'g', 'p'];
+
+      // Mengurutkan array angka secara ascending
+      angka.sort(function (a, b) {
+        return a - b;
+      });
+
+      // Mengurutkan array huruf secara ascending
+      huruf.sort();
+
+      // Menampilkan hasil ke dalam elemen <p>
+      document.getElementById('hasilAngka').textContent = 'Output: [' + angka.join(', ') + ']';
+      document.getElementById('hasilHuruf').textContent = 'Output: [' + huruf.join(', ') + ']';
+    </script>
+  </body>
+</html>
