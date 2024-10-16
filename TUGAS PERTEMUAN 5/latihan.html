@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Latihan Fronted</title>
+  </head>
+  <body>
+    <button onclick="hitungKlik()">Tombol Klik</button>
+    <p>Jumlah klik: <span id="jumlahKlik">0</span></p>
+
+    <script>
+      let jumlah = 0;
+
+      function hitungKlik() {
+        jumlah++;
+        document.getElementById('jumlahKlik').textContent = jumlah;
+      }
+    </script>
+  </body>
+</html>
