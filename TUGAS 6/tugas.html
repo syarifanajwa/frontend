@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tugas</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h2>Tugas</h2>
+    <form>
+      <label for="buah">Masukkan nama buah:</label>
+      <input type="text" id="buah" name="buah" />
+      <button type="button" onclick="tampilkanData()">Beli</button>
+    </form>
+
+    <div id="dataPembelian">
+      <h3>Data Pembelian:</h3>
+      <p>Nama Buah: <span id="namaBuah"></span></p>
+      <p>Harga / Kg: <span id="harga"></span></p>
+      <p>Diskon: <span id="diskon"></span></p>
+    </div>
+
+    <table id="tabelBuah">
+      <thead>
+        <tr>
+          <th>Nama Buah</th>
+          <th>Harga / Kg</th>
+          <th>Diskon</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Nanas</td>
+          <td>7.500</td>
+          <td>5%</td>
+        </tr>
+        <tr>
+          <td>Anggur</td>
+          <td>35.000</td>
+          <td>15%</td>
+        </tr>
+        <tr>
+          <td>Melon</td>
+          <td>12.500</td>
+          <td>10%</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <script src="script.js"></script>
+  </body>
+</html>
