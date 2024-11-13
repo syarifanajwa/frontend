@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Perhitungan Biaya Kirim Paket</title>
+    <!-- Include jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Tambahkan CSS untuk styling -->
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+      h2 {
+        text-align: center;
+      }
+      form {
+        width: 400px;
+        margin: auto;
+        padding: 20px;
+        border: 2px solid rgb(28, 0, 128);
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      .form-group {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+
+      label,
+      .rupiah,
+      input {
+        display: inline-block;
+      }
+
+      .rupiah {
+        margin-left: 5px; /* Sesuaikan jarak sesuai kebutuhan */
+      }
+
+      label {
+        width: 120px;
+        margin-right: 10px;
+        font-weight: bold;
+      }
+      input,
+      select {
+        flex: 1;
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      input[readonly] {
+        background-color: #f0f0f0;
+      }
+      button {
+        padding: 10px 20px;
+        background-color: rgb(59, 46, 202);
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 100%;
+      }
+      button:hover {
+        background-color: rgb(16, 3, 45);
+      }
+    </style>
+  </head>
+  <body>
+    <h2>PERHITUNGAN BIAYA KIRIM PAKET</h2>
+    <form id="shippingForm">
+      <div class="form-group">
+        <label>Nomor Resi:</label>
+        <input type="text" id="nomorResi" required />
+      </div>
+
+      <div class="form-group">
+        <label>Berat Barang (kg):</label>
+        <input type="number" id="beratBarang" step="0.1" required />
+      </div>
+
+      <div class="form-group">
+        <label>Kota Asal:</label>
+        <select id="kotaAsal" required>
+          <option value="">Pilih Kota Asal</option>
+          <option value="Banyuwangi">Banyuwangi</option>
+          <option value="Jember">Jember</option>
+          <option value="Probolinggo">Probolinggo</option>
+          <option value="Surabaya">Surabaya</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Kota Tujuan:</label>
+        <select id="kotaTujuan" required>
+          <option value="">Pilih Kota Tujuan</option>
+          <option value="Banyuwangi">Banyuwangi</option>
+          <option value="Jember">Jember</option>
+          <option value="Probolinggo">Probolinggo</option>
+          <option value="Surabaya">Surabaya</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="totalBiaya">Total Biaya Pengiriman:</label>
+        <span class="rupiah">Rp.</span>
+        <input type="text" id="totalBiaya" readonly />
+      </div>
+
+      <button type="button" onclick="hitungBiaya()">Hitung Biaya</button>
+    </form>
+
+    <script>
+      // Biaya Jarak antar kota
+      const biayaJarak = {
+        Banyuwangi: { Banyuwangi: 5000, Jember: 7500, Probolinggo: 10000, Surabaya: 15000 },
+        Jember: { Banyuwangi: 7500, Jember: 0, Probolinggo: 8500, Surabaya: 12500 },
+        Probolinggo: { Banyuwangi: 10000, Jember: 8500, Probolinggo: 0, Surabaya: 6500 },
+        Surabaya: { Banyuwangi: 15000, Jember: 12500, Probolinggo: 6500, Surabaya: 5000 },
+      };
+
+      // Biaya Berat berdasarkan berat barang
+      function biayaBerat(berat) {
+        if (berat > 0 && berat <= 1) return 1500;
+        else if (berat > 1 && berat <= 5) return 2500;
+        else if (berat > 5 && berat <= 10) return 3500;
+        else return 4500;
+      }
+
+      // Fungsi untuk menghitung total biaya pengiriman
+      function hitungBiaya() {
+        const nomorResi = $('#nomorResi').val();
+        const beratBarang = parseFloat($('#beratBarang').val());
+        const kotaAsal = $('#kotaAsal').val();
+        const kotaTujuan = $('#kotaTujuan').val();
+
+        // Validasi input
+        if (!nomorResi) {
+          alert('Nomor resi harus diisi.');
+          return;
+        }
+        if (isNaN(beratBarang) || beratBarang <= 0) {
+          alert('Berat barang harus berupa angka positif.');
+          return;
+        }
+        if (!kotaAsal || !kotaTujuan) {
+          alert('Pilih kota asal dan tujuan.');
+          return;
+        }
+
+        // Hitung biaya
+        const biayaJarakKota = biayaJarak[kotaAsal][kotaTujuan];
+        const biayaBeratBarang = biayaBerat(beratBarang);
+        const totalBiaya = biayaJarakKota + biayaBeratBarang;
+
+        // Format mata uang
+        const formattedTotalBiaya = new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' }).format(totalBiaya);
+
+        $('#totalBiaya').val(formattedTotalBiaya);
+
+        // Tambahkan fitur tambahan (contoh: estimasi waktu pengiriman)
+        // ...
+      }
+    </script>
+  </body>
+</html>
