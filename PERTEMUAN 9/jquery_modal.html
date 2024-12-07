@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Modal Gambar</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <button class="btn btn-warning" id="tombol_klik" data-toggle="modal" data-target="#modalGambar" data-gambar="https://cdn.idntimes.com/content-images/post/20220923/shutterstock-1024593661-5c129cb554471c6679cdfcfb08cd0eae_600x400.jpg">Klik saya</button>
+
+    <img src="https://cdn.idntimes.com/content-images/post/20220923/shutterstock-1024593661-5c129cb554471c6679cdfcfb08cd0eae_600x400.jpg" width="100px" />
+
+    <div class="modal fade" id="modalGambar" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Menampilkan gambar ke modal</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+          <div class="modal-body">
+            <img id="parse-src" />
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Tutup</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      $(document).ready(function () {
+        $('#tombol_klik').click(function (e) {
+          e.preventDefault();
+          var gambar = $(this).attr('data-gambar');
+          $('#parse-src').attr('src', gambar);
+          $('#parse-src').attr('width', '100px');
+          $('#modalGambar').modal();
+        });
+      });
+    </script>
+  </body>
+</html>
