@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Membuat Widget Tabs Dengan jQuery UI</title>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="jquery-ui/jquery-ui.js"></script>
+<link rel="stylesheet" type="text/css" href="jquery-ui/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+
+<h1>Membuat Widget Tabs Dengan jQuery UI</h1>
+
+<div id="tabs">
+  <ul>
+    <li><a href="#tabs-pertama">Tutorial</a></li>
+    <li><a href="#tabs-kedua">STIKOM</a></li>
+    <li><a href="#tabs-ketiga">jQuery UI</a></li>
+  </ul>
+  <div id="tabs-pertama">
+    <p>Tutorial jquery ui: Membuat Widget Tabs Dengan jQuery UI. Ini merupakan tab pertama.
+    Di tanda dengan tabs masing-masing sesuai id. widget tab berguna untuk memberikan pengelompokan pada data dan banyak lagi kegunaan lainnya.</p>
+  </div>
+  <div id="tabs-kedua">
+    <p>STIKOM adalah sebuah Perguruan Tinggi di bidang informatika yang membekali mahasiswanya dengan berbagai matakuliah antara lain pemrograman dasar, menengah hingga lanjutan. Perpustakaan STIKOM menyediakan tutorial-tutorial berkualitas dan diharapkan dapat membantu mahasiswa yang membaca tutorial di perpustakaan dalam mempelajari pemrograman web, mobile maupun desktop.</p>
+    <ul>
+      <li>Web Programming</li>
+      <li>Web Design</li>
+      <li>Mobile App Development</li>
+    </ul>
+  </div>
+  <div id="tabs-ketiga">
+    <p>jQuery UI merupakan library yang dikembangkan dari jQuery. jQuery UI khusus untuk bagian front-end atau bagian user interface.
+    jQuery UI menyediakan beberapa efek yang dikembangkan dari jQuery dan juga beberapa widget yang sangat berguna,
+    tinggal digunakan dengan memberikan fungsi yang telah disediakan oleh jQuery UI.</p>
+  </div>
+</div>
+
+<script type="text/javascript">
+$(document).ready(function(){
+  $("#tabs").tabs();
+});
+</script>
+
+</body>
+</html>

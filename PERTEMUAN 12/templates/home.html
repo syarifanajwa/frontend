@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width , initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}"/>
+    <title>STIKOM PGRI BANYUWANGI</title>
+</head>
+
+<body>
+    <nav>
+        <a href="main">Home</a>
+        <a href="">Jurusan</a>
+        <a href="">Kontak</a>
+        <a href="">Tentang Kami</a>
+    </nav>
+
+    <hr>
+
+    <header style="text-align: center;">
+        <img src="{{url_for('static',filename='img/logo.jpg')}}" width="300" height="300" style="border-radius: 50%;"/>
+        <h1>STIKOM PGRI Banyuwangi</h1>
+    </header>
+
+    <hr>
+
+    <article style="text-align: center;">
+        <h2>Tentang STIKOM</h2>
+        <p>
+            STIKOM PGRI Banyuwangi Mempunya 2 program studi <br>
+            Teknik Informatika dan Manajemen Informatika Yang Memberikan <br>
+            Bakal Mata Kuliah Pemograman Sbb :
+        </p>
+    </article>
+
+    <div style="max-width: 600px; margin: 3em auto;">
+        <table border="1" width="100%">
+            <thead>
+                <tr>
+                    <th colspan="2">Manajemen Informatika & Teknik Informatika</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <ul>
+                            <li>HTML (Expert)</li>
+                            <li>CSS (Beginner)</li>
+                            <li>Javascript (Beginner)</li>
+                            <li>Python (Expert)</li>
+                            <li>React Native (Beginner)</li>
+                            <li>Node.js (Beginner)</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <li>
+                                <img src="{{ url_for('static', filename='img/html.jpg') }}" width="50" height="50" style="border-radius: 50%;">
+                            </li>
+                            <li>
+                                <img src="{{ url_for('static', filename='img/css.png') }}" width="50" height="50" style="border-radius: 50%;">
+                            </li>
+                            <li>
+                                <img src="{{ url_for('static', filename='img/javascript.png') }}" width="50" height="50" style="border-radius: 50%;">
+                            </li>
+                            <li>
+                                <img src="{{ url_for('static', filename='img/pyy.png') }}" width="50" height="50" style="border-radius: 50%;">
+                            </li>
+                            <li>
+                                <img src="{{ url_for('static', filename='img/react.png') }}" width="50" height="50" style="border-radius: 50%;">
+                            </li>
+                            <li>
+                                <img src="{{ url_for('static', filename='img/nodejs.png') }}" width="50" height="50" style="border-radius: 50%;">
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <hr>
+    <footer style="text-align: center;">
+        <p>Copyright &copy; STIKOM PGRI Banyuwangi</p>
+    </footer>    
+</body>
+</html>

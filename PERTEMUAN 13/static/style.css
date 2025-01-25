@@ -1,0 +1,121 @@
+/* Style umum untuk body */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Style untuk navigasi */
+nav {
+    background-color: #004080;
+    padding: 1em 0;
+    text-align: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    margin: 0 1.5em;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #ffcc00;
+}
+
+/* Style untuk header */
+header {
+    padding: 2em 0;
+    background-color: #e6f2ff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    color: #004080;
+    font-size: 2em;
+    margin-top: 1em;
+}
+
+header img {
+    border-radius: 0; /* Menghilangkan lingkaran */
+    border: none; /* Menghapus border */
+    display: block;
+    margin: 0 auto; /* Untuk membuat gambar berada di tengah */
+}
+
+
+/* Style untuk artikel */
+article {
+    margin: 2em auto;
+    padding: 1.5em;
+    max-width: 800px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+article h2 {
+    color: #004080;
+}
+
+article p {
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+/* Style untuk tabel */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1em;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+table thead {
+    background-color: #004080;
+    color: white;
+}
+
+table th, table td {
+    text-align: center;
+    padding: 1em;
+    border: 1px solid #ddd;
+}
+
+table td ul {
+    padding: 0;
+    list-style: none;
+}
+
+table td ul li {
+    margin-bottom: 0.5em;
+}
+
+/* Style untuk gambar dalam tabel */
+table td ul li img {
+    margin-top: 0.5em;
+    border-radius: 50%;
+    border: 3px solid #004080;
+}
+
+/* Style untuk footer */
+footer {
+    background-color: #004080;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+    margin-top: 2em;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+footer p {
+    margin: 0;
+}
